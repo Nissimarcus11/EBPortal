@@ -1,0 +1,74 @@
+ <?php 
+       
+       $server = "127.0.0.1";
+       $user = "xme3";
+       $db = "EBPortal";
+       $conn = mysqli_connect($server,$user,'',$db);
+        $fn=$cp=$p=$un=$e=$dob=null;
+        if($_SERVER['REQUEST_METHOD']== "POST"){
+            $fullname=htmlentities($_POST['fullname']);
+            $username=htmlentities($_POST['username']);
+            $email=htmlentities($_POST['email']);
+            $password=htmlentities($_POST['password']);
+            $cpassword=htmlentities($_POST['cpassword']);
+            $dateofbirth = htmlentities($_POST['dob']);
+            if(empty($fullname)){
+                $un=" Please enter fullname";
+            }
+            if(empty($username)){
+                $un=" Please enter username";
+            }
+            else{
+                
+                $result = mysqli_query($conn,"SELECT * FROM Employer WHERE username='$username'");
+                    if(mysqli_num_rows($result) > 0){
+                        $un = "Choose a different Username";
+                    }
+            }
+            if(empty($email)){
+                $e=" Please enter email";
+            }
+
+            else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $e = "Please enter valid email";
+              }
+            if(empty($password)){
+                $p=" Please enter Password";
+            }
+            
+            if(empty($cpassword)){
+                $cp=" Please confirm Password";
+            }
+            else if($password <> $cpassword){
+                $cp="passwords not matched";
+            }
+
+            if(empty($dateofbirth)){
+                $dob=" Please select date";
+                
+            }
+
+            if(array_key_exists('reset', $_POST)) { 
+                header("Location: signup.php");
+            }
+
+            if (empty($un) && empty($e) && empty($p) && empty($cp) && empty($dob)){
+                $ins ="INSERT INTO Employer
+                VALUES('$fullname','$username','$password', '$email','$dateofbirth')
+                ";
+
+                $res=mysqli_query($conn,$ins);
+                if($res){
+                    
+                    header("Location: 18mis7072_success.php");
+                    
+                }
+                else{
+                    echo("unsuccess: ".mysqli_error($conn));
+                }
+            }
+            
+             
+  
+        }
+        ?> 
