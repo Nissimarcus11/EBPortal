@@ -7,6 +7,7 @@
     else{
         $name = "Sign in";
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Sign In | Employment Portal</title>
+    <title>Add Job | Employment and Business Portal</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
@@ -31,77 +32,15 @@
     </head>
     
     <body>
-    <?php 
-       
-       $server = "127.0.0.1";
-       $user = "xme3";
-       $db = "EBPortal";
-       $conn = mysqli_connect($server,$user,'',$db);
-        $sc=$fn=$cp=$p=$un=$e=$dob=$rl=null;
-        if($_SERVER['REQUEST_METHOD']== "POST"){
-            //$fullname=htmlentities($_POST['fullname']);
-            $username=htmlentities($_POST['username']);
-            // $email=htmlentities($_POST['email']);
-            $password=htmlentities($_POST['password']);
-            // $cpassword=htmlentities($_POST['cpassword']);
-            // $dateofbirth = htmlentities($_POST['dob']);
-            $role=htmlentities($_POST['role']);
-           
-            if(empty($username)){
-                $un=" Please enter username";
-            }
-            
-            if(empty($password)){
-                $p=" Please enter Password";
-            }
-            
-            if(empty($role)){
-                $rl="Please select Role";
-            }
-
-            // if(array_key_exists('reset', $_POST)) { 
-            //     header("Location: signup.php");
-            // }
-
-            if (empty($rl) && empty($un) && empty($p) ){
-                if($role == "Employer"){
-                $ins ="SELECT * FROM Employer WHERE username='$username' AND password='$password'";
-                // $res=mysqli_query($conn,$ins);
-                // if($res){
-                    
-                //     session_start();
-                //     $_SESSION["login"] = 1;
-
-                    
-                // }
-
-                $res=mysqli_query($conn,$ins);
-                if(mysqli_num_rows($res) == 0){
-                                $p = " Username and Password not matched ";
-                            }
-                else{
-                    //session_start();
-                    $_SESSION["login"] = "1";
-                    $_SESSION["username"] = $username;
-                    $ins ="SELECT fullname FROM Employer WHERE username='$username'";
-                    $res=mysqli_query($conn,$ins);
-                    $nm = mysqli_fetch_assoc($res);
-                    $_SESSION['name'] = $nm['fullname'];
-                    // $sc = "welcome ".$nm['fullname'];
-                    // echo "<script>alert(".$nm.")</script>";
-                    // $row = mysqli_fetch_assoc($res)
-                    header("Location: index.php");
-                }
-                // else{
-                //     echo("unsuccess: ".mysqli_error($conn));
-                // }
-            }
-            }
-            
-             
-  
-        }
-        ?> 
+    <?php
+        
+    if(isset($_GET['s'])){
+        $sc=$_GET['s'];
+    }
+    else{
+    $sc="Enter details to upload job requirement <br> Jobname and Payscale are mandatory";
+    }
+    ?>
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
       <div class="preloader-inner">
@@ -123,32 +62,32 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Employment <em> Portal</em></a>
+                        <a href="index.php" class="logo">Employment <em> Portal</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="jobs.html">Jobs</a></li>
-                            <!-- <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Log in</a>
+                            <li><a href="index.php" class="active">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                              
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="signin.php">Sign in </a>
-                                    <a class="dropdown-item" href="signup.php">Sign up</a>
-                                    
+                                    <a class="dropdown-item" href="Jobs.php">Explore Jobs</a>
+                                    <a class="dropdown-item" href="add_jobs.php">Add Jobs</a>
                                 </div>
-                            </li> -->
+                            </li>
+                            
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                               
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="about.php">About Us</a>
                                     <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
+                                    <a class="dropdown-item" href="blog.php">Blog</a>
                                     <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                                     <a class="dropdown-item" href="terms.html">Terms</a>
                                 </div>
                             </li>
-                            <li><a href="contact.html">Contact</a></li> 
+                            <li><a href="contact.php">Contact</a></li> 
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class='fas fa-user-alt'></i></a>
                                 <div class="dropdown-menu">
@@ -176,6 +115,23 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
+    <!-- ***** Main Banner Area Start ***** -->
+    <!-- <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/images/video.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h6>Explore the wide range options</h6>
+                <h2>Find the perfect <em>Job</em></h2>
+                <div class="main-button">
+                    <a href="contact.php">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+ <!-- ***** Main Banner Area End ***** -->
     <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
         <div class="container">
             <div class="row">
@@ -183,16 +139,17 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2>Join with <em>us</em></h2>
-                        <p>Join with us to explore and create exclusive jobs</p>
+                        <h2>Add <em>Jobs</em></h2>
+                        <p>Find skilled employees easily</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- ***** Our Classes Start ***** -->
-    <section class="section" id="signup">
+    <section class="section" id="add_job">
         <div class="container">
             <br>
             <br>
@@ -200,48 +157,77 @@
             <!-- /<div class="row" id="tabs"> -->
               <!-- <div class="con"> -->
                 <div class ="container" style = "padding-bottom: 30px;">
-                <div id="success_msg" style = "color:green; marigin-top:10px; margin-bottom:10px;">
-                <?php echo $sc ?> 
+                    <div id="success_msg" style = "color:tomato; marigin-top:10px; margin-bottom:10px;">
+                    <?php echo $sc; ?> 
                 </div>
+                    
+            <form style="height: 60vh;" method="post" action="eval_jobs.php">
+                <div class="form-group row">
+                    <label for="jobname" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="jobname" placeholder="Name of the Job">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="payscale" class="col-sm-2 col-form-label">Pay scale</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="payscale" placeholder="Enter the pay scale range">
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" name="contract">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Contract
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" name="fulltime">
+                                <label class="form-check-label" for="fulltime">
+                                    Full time
+                                </label>
+                            </div>
+                        
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" name="internship" >
+                                <label class="form-check-label" for="internship">
+                                    Internship
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-2">Category</div>
+                        <div class="col-sm-10">
+                            <div class="form-select">
+                                <select class="form-control custom-select" name = "category" >
+                                    <option value="" selected disabled>Please select job category</option>
+                                    <option value = "Accounting/finance Jobs">Accounting/finance Jobs</option>
+                                    <option value = "Hotel/cooking Jobs">Hotel/cooking Jobs</option>
+                                    <option value = "Cleaning/organizing Jobs">Cleaning/organizing Jobs</option>
+                                    <option value = "Education/Tuitor Jobs">Education/Tuitor Jobs</option>
+                                    <option value = "Medical/Health Jobs">Medical/Health Jobs</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+      
+                <div class="form-group row" style = "margin-top:20px;">
+                    <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button name = "reset" class="btn btn-primary" id="reset">Reset</button>
+                    </div>
+                </div>
+            </form>           
+                    
                
-                <form class = "form-horizontal" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <div class = "form-group" style="margin-top: 10px;">
-                        <div id="form_left" class="control-label col-sm-6">
-                            Select Role
-                        </div>
-                        <div id="form_mid" class="col-sm-10">
-                            <select name="role" class="form-control">
-                                <option>Employer</option>
-                                <option>job Seeker</option>
-                            </select>
-                            <?php echo $rl ?>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="form-group"> 
-                        <div id="form_left" class="control-label col-sm-6">User Name: </div>
-                        <div id="mid" class="col-sm-10"><input type = 'text' class="form-control" name = 'username'></div>
-                        <?php echo $un ?>
-                       
-                    </div>
-                   
                 
-                    <div class="form-group">
-                        <div id="form_left" class="control-label col-sm-6">Password: </div>
-                        <div id="mid" class="col-sm-10"><input type = 'password' class="form-control" name = 'password'></div>
-                        <?php echo $p ?>
-                        
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-secondary">Submit</button>
-                        </div>
-                    </div>
-                    <!-- <button type = 'submit' class = "btn btn-secondary" name="submit">Submit</button> -->
-                    <!-- <button name = "reset" id="reset">Reset</button> -->
-                </form>
                 </div>
             
         </div>
@@ -265,14 +251,14 @@
         </div>
     </section>
     <!-- ***** Call to Action End ***** -->
-
-    <!-- ***** Footer Start ***** -->
-    <footer>
+     <!-- ***** Footer Start ***** -->
+     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <p>
-                        No copyrights. A demo project.
+                        Copyright © No-copyrights
+                        - Project by Marcus and Siddhu</a>
                     </p>
                 </div>
             </div>

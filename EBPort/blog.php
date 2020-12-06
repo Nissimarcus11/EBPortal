@@ -19,7 +19,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Contact | Employment Portal</title>
+    <title>Blog | Employment and Business Portal</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
@@ -58,10 +58,14 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="index.php" class="active">Home</a></li>
-                            <div class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                              
+                                <div class="dropdown-menu">
                                     <a class="dropdown-item" href="Jobs.php">Explore Jobs</a>
                                     <a class="dropdown-item" href="add_jobs.php">Add Jobs</a>
                                 </div>
+                            </li>
                             <!-- <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Log in</a>
                                 <div class="dropdown-menu">
@@ -76,7 +80,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="about.php">About Us</a>
                                     <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
+                                    <a class="dropdown-item" href="blog.php">Blog</a>
                                     <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                                     <a class="dropdown-item" href="terms.html">Terms</a>
                                 </div>
@@ -109,6 +113,7 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
+
     <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
         <div class="container">
             <div class="row">
@@ -116,109 +121,111 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2>Feel free to <em>Contact Us</em></h2>
-                        <p>We try to solve user problems in less than 48 hours.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ***** Features Item Start ***** -->
-    <section class="section" id="features">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h2>contact <em> info</em></h2>
-                        <img src="assets/images/line-dec.png" alt="waves">
+                        <h2>Read our <em>Blog</em></h2>
                         
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="icon">
-                        <i class="fa fa-phone"></i>
-                    </div>
-
-                    <h5><a href="#">+91 80900 80900</a></h5>
-
-                    <br>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="icon">
-                        <i class="fa fa-envelope"></i>
-                    </div>
-
-                    <h5><a href="#">contact@employmentportal.com</a></h5>
-
-                    <br>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="icon">
-                        <i class="fa fa-map-marker"></i>
-                    </div>
-
-                    <h5>Near AP-secretariat, Amaravathi</h5>
-
-                    <br>
-                </div>
             </div>
         </div>
     </section>
-    <!-- ***** Features Item End ***** -->
-   
-    <!-- ***** Contact Us Area Starts ***** -->
-    <section class="section" id="contact-us" style="margin-top: 0">
-        <div class="container-fluid">
+
+    <!-- ***** Blog Start ***** -->
+    <section class="section" id="our-classes">
+        <div class="container">
+            <br>
+            <br>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div id="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122420.68783761625!2d80.43516825247849!3d16.4934281007215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ed0b183aea1b%3A0x11d318810e9c92c2!2sAmaravati%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1607242202789!5m2!1sen!2sin" width="100%" height="600px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                      
-                    </div>
+                <div class="col-lg-8">
+                    <section class='tabs-content'>
+                      <article>
+                        <img src="assets/images/blog-image-1-940x460.jpg" alt="">
+                        <h4>Investment Banking Interview Questions and Answers</h4>
+
+                        <p><i class="fa fa-user"></i> sidwick &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 06.12.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i></p>
+
+                        <p>Investment banking interviews can be a nightmare for people that are going for the first time.
+                            <br>
+                            <br>
+
+A simple Google search will lead you down a rabbit hole of bad interviews or horror stories about interviewers taking their job a little too seriously.</p>
+                        <div class="main-button">
+                            <a href="blog-details.html">Continue Reading</a>
+                        </div>
+                      </article>
+
+                      <br>
+                      <br>
+
+                      <article>
+                        <img src="assets/images/blog-image-2-940x460.jpg" alt="">
+                        <h4>We works when talented, passionate people come together.</h4>
+                        <p><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  </p>
+                        <p>Come help Indeed work. We are looking to grow our teams with people who share our energy and enthusiasm for creating the best experience for job seekers.</p>
+                        <div class="main-button">
+                            <a href="blog-details.html">Continue Reading</a>
+                        </div>
+                      </article>
+
+                      <br>
+                      <br>
+
+                      <article>
+                        <img src="assets/images/blog-image-3-940x460.jpg" alt="">
+                        <h4>A Guide to properly Asking for an Internship by Email</h4>
+                        <p><i class="fa fa-user"></i> Marcus &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 06.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i></p>
+                        <p>It can be stressful to try to line up an internship because so many students and new graduates are looking for the same positions.
+<br>
+<br>
+It’s not impossible though, especially if you personalize your applications.
+<br>
+<br>
+Regardless of your reasons for seeking an internship position, this guide will help you from start to finish to create a successful internship request email.</p>
+                        <div class="main-button">
+                            <a href="blog-details.html">Continue Reading</a>
+                        </div>
+                      </article>
+                    </section>
                 </div>
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div class="contact-form section-bg" style="background-image: url(assets/images/contact-1-720x480.jpg)">
-                        <form id="contact" action="" method="post">
-                          <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Your Name*" required="">
-                              </fieldset>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required="">
-                              </fieldset>
-                            </div>
-                            <div class="col-md-12 col-sm-12">
-                              <fieldset>
-                                <input name="subject" type="text" id="subject" placeholder="Subject">
-                              </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                              <fieldset>
-                                <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
-                              </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                              <fieldset>
-                                <button type="submit" id="form-submit" class="main-button">Send Message</button>
-                              </fieldset>
-                            </div>
-                          </div>
+
+                <div class="col-lg-4">
+                    <h5 class="h5">Search</h5>
+                    
+                    <div class="contact-form">
+                        <form id="search_form" name="gs" method="GET" action="#">
+                          <input type="text" name="q" class="searchText" placeholder="type to search..." autocomplete="on">
                         </form>
                     </div>
+
+                    <h5 class="h5">Recent posts</h5>
+
+                    <ul>
+                        <li>
+                            <p><a href="blog-details.html">Everything you need to know about Cybersecurity</a></p>
+                            <small><i class="fa fa-user"></i> Rakesh &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10</small>
+                        </li>
+
+                        <li><br></li>
+
+                        <li>
+                            <p><a href="blog-details.html">How Emotions are contagious and what that means at the workplace.</a></p>
+                            <small><i class="fa fa-user"></i> Varun &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 13.07.2020 11:27</small>
+                        </li>
+
+                        <li><br></li>
+
+                        <li>
+                          <p><a href="blog-details.html">How to think about your carrer from VP of product Design at Facebook</a></p>
+
+                          <small><i class="fa fa-user"></i> Sairaj &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 30.07.2020 22:10</small>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ***** Contact Us Area Ends ***** -->
-    
-    <!-- ***** Footer Start ***** -->
+    <!-- ***** Blog End ***** -->
+
+  <!-- ***** Footer Start ***** -->
   <footer>
     <div class="container">
         <div class="row">

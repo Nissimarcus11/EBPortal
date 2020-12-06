@@ -58,22 +58,22 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="index.php" class="active">Home</a></li>
-                            <li><a href="jobs.html">Jobs</a></li>
-                            <!-- <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Log in</a>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                              
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="signin.php">Sign in </a>
-                                    <a class="dropdown-item" href="signup.php">Sign up</a>
-                                    
+                                    <a class="dropdown-item" href="Jobs.php">Explore Jobs</a>
+                                    <a class="dropdown-item" href="add_jobs.php">Add Jobs</a>
                                 </div>
-                            </li> -->
+                            </li>
+                           
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                               
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about.html">About Us</a>
+                                    <a class="dropdown-item" href="about.php">About Us</a>
                                     <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
+                                    <a class="dropdown-item" href="blog.php">Blog</a>
                                     <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                                     <a class="dropdown-item" href="terms.html">Terms</a>
                                 </div>
@@ -122,21 +122,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="main-banner" id="top">
-        <video autoplay muted loop id="bg-video">
-            <source src="assets/images/video.mp4" type="video/mp4" />
-        </video>
-
-        <div class="video-overlay header-text">
-            <div class="caption">
-                <h6>Search and</h6>
-                <h6>Find the perfect <em>Job for you</em></h6>
-                <div class="main-button">
-                    <a href="contact.php">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
     <!-- ***** Main Banner Area End ***** -->
 
    <!-- ***** Cars Starts ***** -->
@@ -258,40 +244,45 @@
                   <li><a href='#tabs-1'>How to introduce Yourself in an Interview??</a></li>
                   <li><a href='#tabs-2'>How to write best Resume in 2020</a></li>
                   <li><a href='#tabs-3'>Hacks to Land Your Dream Job in a Month.</a></li>
-                  <div class="main-rounded-button"><a href="blog.html">Read More</a></div>
+                  <div class="main-rounded-button"><a href="blog.php">Read More</a></div>
                 </ul>
               </div>
               <div class="col-lg-8">
                 <section class='tabs-content'>
                   <article id='tabs-1'>
                     <img src="assets/images/blog-image-1-940x460.jpg" alt="">
-                    <h4>Investment Banking Interview Questions and Answers</h4>
+                    <h4>How to introduce yourself in an Interview??</h4>
 
-                    <p><i class="fa fa-user"></i> sidwick &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 06.12.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  0 comments</p>
+                    <p><i class="fa fa-user"></i> sidwick &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 06.12.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  1 comment</p>
 
-                    <p>Investment banking interviews can be a nightmare for people that are going for the first time.<br>
-<br>
-A simple Google search will lead you down a rabbit hole of bad interviews or horror stories about interviewers taking their job a little too seriously.</p>
+                    <p>First impressions happen quickly. During the interview process, there may be several times when you’ll introduce yourself: at the front desk or reception area, to a recruiter, to the hiring manager and potentially additional interviewers. There are few guidelines you can follow on how to introduce yourself in any interview setting.</p>
+
+                <p>To help you navigate the process, we’ll start by identifying best practices when introducing yourself, followed by examples from interviews where you can apply those skills.</p>
+
+            
                     <div class="main-button">
-                        <a href="blog-details.html">Continue Reading</a>
+                        <a href="blog-details1.php">Continue Reading</a>
                     </div>
                   </article>
                   <article id='tabs-2'>
                     <img src="assets/images/blog-image-2-940x460.jpg" alt="">
-                    <h4>Aspernatur excepturi magni, placeat rerum nobis magnam libero! Soluta.</h4>
-                    <p><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
-                    <p>Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a velit. Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus nibh, ullamcorper at mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <h4>How to Write Best Resume in 2020??</h4>
+                    <p><i class="fa fa-user"></i> Marcus &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i> 1 comment</p>
+                    <p>2020 is a year which most of the people across the globe would remember as a year of the pandemic.While literally, the whole world starts living virtually, even employment avenues had to be retorted to virtual mode.Traditional face to face interviews seem to be an act of the past, nowadays its digital interviews which have taken over.Thus the insights about how to write a resume have its important more than ever. In this blog, we shall provide all you need to know insights about how to write a resume with resume/cv samples.</p>
                     <div class="main-button">
-                        <a href="blog-details.html">Continue Reading</a>
+                        <a href="blog-details2.php">Continue Reading</a>
                     </div>
                   </article>
                   <article id='tabs-3'>
                     <img src="assets/images/blog-image-3-940x460.jpg" alt="">
-                    <h4>Sunt hic recusandae vitae explicabo quidem laudantium corrupti non adipisci nihil.</h4>
-                    <p><i class="fa fa-user"></i> John Doe &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i>  15 comments</p>
-                    <p>Fusce laoreet malesuada rhoncus. Donec ultricies diam tortor, id auctor neque posuere sit amet. Aliquam pharetra, augue vel cursus porta, nisi tortor vulputate sapien, id scelerisque felis magna id felis. Proin neque metus, pellentesque pharetra semper vel, accumsan a neque.</p>
+                    <h4>Hacks to Land your Dream Job in a month!!!!</h4>
+                    <p><i class="fa fa-user"></i> varun &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 27.09.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i> 1 comment</p>
+                    <p>The recent COVID-19 situation has cost many their jobs rendering them clueless and in despair.</p>
+
+                <p>Whether due to loss of a job or a genuine search for a new job, we have listed these 9 hacks for you to land a job in a month.</p>
+
                     <div class="main-button">
-                        <a href="blog-details.html">Continue Reading</a>
+                        <a href="blog-details3.php">Continue Reading</a>
                     </div>
                   </article>
                 </section>
@@ -379,7 +370,7 @@ A simple Google search will lead you down a rabbit hole of bad interviews or hor
             <br>
 
             <div class="main-button text-center">
-                <a href="testimonials.html">Read More</a>
+                <!-- <a href="testimonials.html">Read More</a> -->
             </div>
         </div>
     </section>

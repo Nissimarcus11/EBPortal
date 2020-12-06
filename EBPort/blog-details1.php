@@ -19,13 +19,14 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Contact | Employment Portal</title>
+    <title> Blog-Details | Employment Portal</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
+
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
     </head>
@@ -58,25 +59,22 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="index.php" class="active">Home</a></li>
-                            <div class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                              
+                                <div class="dropdown-menu">
                                     <a class="dropdown-item" href="Jobs.php">Explore Jobs</a>
                                     <a class="dropdown-item" href="add_jobs.php">Add Jobs</a>
                                 </div>
-                            <!-- <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Log in</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="signin.php">Sign in </a>
-                                    <a class="dropdown-item" href="signup.php">Sign up</a>
-                                    
-                                </div>
-                            </li> -->
+                            </li>
+                           
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                               
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="about.php">About Us</a>
                                     <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
+                                    <a class="dropdown-item" href="blog.php">Blog</a>
                                     <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                                     <a class="dropdown-item" href="terms.html">Terms</a>
                                 </div>
@@ -116,121 +114,128 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2>Feel free to <em>Contact Us</em></h2>
-                        <p>We try to solve user problems in less than 48 hours.</p>
+                        <h2>Single <em>blog post</em></h2>
+                        <p></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ***** Features Item Start ***** -->
-    <section class="section" id="features">
+    <!-- ***** Blog Start ***** -->
+    <section class="section" id="our-classes">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h2>contact <em> info</em></h2>
-                        <img src="assets/images/line-dec.png" alt="waves">
-                        
+            <br>
+            <br>
+            <section class='tabs-content'>
+              <article>
+                <h4>How to introduce yourself in an Interview??</h4>
+
+                <p><i class="fa fa-user"></i> sidwick &nbsp;|&nbsp; <i class="fa fa-calendar"></i> 7.07.2020 10:10 &nbsp;|&nbsp; <i class="fa fa-comments"></i></p>
+
+                <div><img src="assets/images/blog-image-fullscren-1-1920x700.jpg" alt=""></div>
+
+                <br>
+
+                <p>First impressions happen quickly. During the interview process, there may be several times when you’ll introduce yourself: at the front desk or reception area, to a recruiter, to the hiring manager and potentially additional interviewers. There are few guidelines you can follow on how to introduce yourself in any interview setting.</p>
+
+                <p>To help you navigate the process, we’ll start by identifying best practices when introducing yourself, followed by examples from interviews where you can apply those skills.</p>
+
+                <b>Things to consider when introducing yourself in an interview</b>
+                <br>
+                <br>
+
+                <p>Before your interview, there are several things to consider about your appearance and mindset that can set you up for a successful introduction.</p>
+
+                <p><b>Dress appropriately</b></p>
+                <p><b>Prepare what to say</b></p>
+                <p><b>Be aware of body language</b></p>
+
+
+                <ul class="social-icons">
+                    <li>Share this:</li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                </ul>
+              </article>
+            </section>
+
+            <br>
+            <br>
+            <br>
+            
+            <section class='tabs-content'>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>Comments</h4>
+                        <ul class="features-items">
+                            <li>
+                                <div class="feature-item" style="margin-bottom:15px;">
+                                    <div class="left-icon">
+                                        <img src="assets/images/features-first-icon.png" alt="First One">
+                                    </div>
+                                    <div class="right-content">
+                                        <h4>charan <small>27.07.2020 10:10</small></h4>
+                                        <p><em>"Thanks a lot!!!"</em></p>
+                                    </div>
+                                </div>
+
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Leave a comment</h4>
+                
+                        <div class="contact-form">
+                            <form action="" method="post">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <fieldset>
+                                    <input name="name" type="text" id="name" placeholder="Your Name*" required="">
+                                  </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                  <fieldset>
+                                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required="">
+                                  </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                  <fieldset>
+                                    <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                                  </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                  <fieldset>
+                                    <button type="submit" id="form-submit" class="main-button">Submit</button>
+                                  </fieldset>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="icon">
-                        <i class="fa fa-phone"></i>
-                    </div>
-
-                    <h5><a href="#">+91 80900 80900</a></h5>
-
-                    <br>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="icon">
-                        <i class="fa fa-envelope"></i>
-                    </div>
-
-                    <h5><a href="#">contact@employmentportal.com</a></h5>
-
-                    <br>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="icon">
-                        <i class="fa fa-map-marker"></i>
-                    </div>
-
-                    <h5>Near AP-secretariat, Amaravathi</h5>
-
-                    <br>
-                </div>
-            </div>
+            </section>
         </div>
     </section>
-    <!-- ***** Features Item End ***** -->
-   
-    <!-- ***** Contact Us Area Starts ***** -->
-    <section class="section" id="contact-us" style="margin-top: 0">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div id="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122420.68783761625!2d80.43516825247849!3d16.4934281007215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ed0b183aea1b%3A0x11d318810e9c92c2!2sAmaravati%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1607242202789!5m2!1sen!2sin" width="100%" height="600px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                      
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div class="contact-form section-bg" style="background-image: url(assets/images/contact-1-720x480.jpg)">
-                        <form id="contact" action="" method="post">
-                          <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Your Name*" required="">
-                              </fieldset>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required="">
-                              </fieldset>
-                            </div>
-                            <div class="col-md-12 col-sm-12">
-                              <fieldset>
-                                <input name="subject" type="text" id="subject" placeholder="Subject">
-                              </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                              <fieldset>
-                                <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
-                              </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                              <fieldset>
-                                <button type="submit" id="form-submit" class="main-button">Send Message</button>
-                              </fieldset>
-                            </div>
-                          </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Contact Us Area Ends ***** -->
-    
+    <!-- ***** Blog End ***** -->
+
     <!-- ***** Footer Start ***** -->
-  <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
                 <p>
-                    Copyright © No-copyrights
-                    - Project by Marcus and Siddhu</a>
-                </p>
+                        Copyright © No-copyrights
+                        - Project by Marcus and Siddhu</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>

@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    $name="";
+    if(isset($_SESSION["name"])){
+        $name = $_SESSION["name"];
+    }
+    else{
+        $name = "Sign in";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,13 +19,15 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Job Agency Website Template</title>
+    <title>About Us | Employment Portal</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
     </head>
     
@@ -35,31 +47,54 @@
     <!-- ***** Preloader End ***** -->
     
     
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Job Agency<em> Website</em></a>
+                        <a href="index.php" class="logo">Employment <em> Portal</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="jobs.html">Jobs</a></li>
+                            <li><a href="index.php" class="active">Home</a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
                               
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item active" href="about.html">About Us</a>
+                                    <a class="dropdown-item" href="Jobs.php">Explore Jobs</a>
+                                    <a class="dropdown-item" href="add_jobs.php">Add Jobs</a>
+                                </div>
+                            </li>
+                          
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="about.php">About Us</a>
                                     <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
+                                    <a class="dropdown-item" href="blog.php">Blog</a>
                                     <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                                     <a class="dropdown-item" href="terms.html">Terms</a>
                                 </div>
                             </li>
-                            <li><a href="contact.html">Contact</a></li> 
+                            <li><a href="contact.php">Contact</a></li> 
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class='fas fa-user-alt'></i></a>
+                                <div class="dropdown-menu">
+                                    <a class ="dropdown-item" href="#">Hello <b><?php echo $name; ?> </b></a>
+                                    <?php 
+                                    if(isset($_SESSION['login'])){
+                                        if($_SESSION['login']==1){
+                                        echo "<a class='dropdown-item'href='signout.php'>Sign out</a>";
+                                    }}
+                                    ?>
+                                    <a class="dropdown-item" href="signin.php">Sign in </a>
+                                    <a class="dropdown-item" href="signup.php">Sign up</a>
+                                    
+                                </div>
+                            </li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -80,7 +115,7 @@
                         <br>
                         <br>
                         <h2>Learn more <em>About Us</em></h2>
-                        <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula</p>
+                        <p>Explore our goals, our work and our passion</p>
                     </div>
                 </div>
             </div>
@@ -107,30 +142,35 @@
                     <img src="assets/images/about-image-1-940x460.jpg" alt="">
                     <h4>Our Goals</h4>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aspernatur natus dignissimos eos quod, odio.</p>
+                    <p>Everyone has to get a job for living</p>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad cupiditate ullam exercitationem molestiae illum? Nam magni, saepe sint maiores vitae!</p>
+                    <p>Everyone should get an opportunity to choose the areas of work as per their passion</p>
 
-                    <p>Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.</p>
+                    <p>No one should be left with no job satisfaction</p>
                    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi suscipit commodi impedit unde accusantium nam incidunt tenetur, libero maiores enim! Nisi ex odit, totam nihil doloribus. Nemo ut, eos consequatur libero aut quas dolorum ipsa, quidem, totam dicta id possimus dolores distinctio laboriosam doloribus voluptates tenetur consectetur inventore aliquid dolorem?</p>
+                    <p>Working together to take India to the next level</p>
                   </article>
                   <article id='tabs-2'>
                     <img src="assets/images/about-image-2-940x460.jpg" alt="">
                     <h4>Our Work</h4>
-                    <p>Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a velit. Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus nibh, ullamcorper at mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ut accusantium cum! Ad quisquam, aut praesentium magni pariatur ipsa! Soluta deserunt accusantium repellendus ratione quam hic facere, cupiditate iste obcaecati a, officiis ipsum aspernatur in?</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla a necessitatibus eos vitae quibusdam quo sunt officiis rerum voluptatibus non natus eius placeat officia vel quaerat, reprehenderit obcaecati, eaque? Repudiandae ad facere culpa accusamus aliquam ab assumenda reiciendis corrupti cum nemo, cumque molestiae corporis deserunt!</p>
+                    <p>A dashboard of genuinely picked jobs including every minor category</p>
+                    <p>Providing feature to contact the employer, search for tips, detailed job description and skills needed</p>
+                    <p>A business portal to encourage young entreprenuers</p>
+                    <p>Fraud detention and avoiding fake companies</p>
                   </article>
                   <article id='tabs-3'>
                     <img src="assets/images/about-image-3-940x460.jpg" alt="">
                     <h4>Our Passion</h4>
-                    <p>Fusce laoreet malesuada rhoncus. Donec ultricies diam tortor, id auctor neque posuere sit amet. Aliquam pharetra, augue vel cursus porta, nisi tortor vulputate sapien, id scelerisque felis magna id felis. Proin neque metus, pellentesque pharetra semper vel, accumsan a neque.</p>
+                    <p>Help every one to seek employment</p>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aut beatae commodi repudiandae distinctio, magnam blanditiis reiciendis vitae velit voluptatum natus, fugit quis eos dolores!</p>
+                    <p>Development of the country in employment and business sectors</p>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic adipisci reiciendis quaerat qui earum aut, atque esse quisquam quis exercitationem sapiente, dolorum consequatur consequuntur voluptatibus ipsam, fuga magnam beatae optio nam. Recusandae ut aliquid, eligendi.</p>
+                    <p>Widening doors for young entreprenuers</p>
+
+                    <p>Eradicating poverty by providing employment</p>
+
+                    <p>Giving genuine employment avoiding fake companies</p>
+
                   </article>
                 </section>
               </div>
@@ -140,7 +180,7 @@
     <!-- ***** Our Classes End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
-    <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
+    <!-- <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
@@ -149,6 +189,23 @@
                         <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.</p>
                         <div class="main-button">
                             <a href="contact.html">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- ***** Call to Action End ***** -->
+    <!-- ***** Call to Action Start ***** -->
+    <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="cta-content">
+                        <h2>Send us a <em>message</em></h2>
+                        <p>We are here to help...!!</p>
+                        <div class="main-button">
+                            <a href="contact.php">Contact us</a>
                         </div>
                     </div>
                 </div>
@@ -163,8 +220,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>
-                        Copyright © 2020 Company Name
-                        - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © No-copyrights
+                        - Project by Marcus and Siddhu</a>
                     </p>
                 </div>
             </div>
