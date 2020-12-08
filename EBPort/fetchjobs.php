@@ -27,6 +27,9 @@ while($row = mysqli_fetch_assoc($result)) {
     if($row['category'] == "Medical/Health Jobs"){
         $img = "<img src='assets/images/Pharma.jpg' alt=''>";
     }
+    if($row['category'] == ""){
+        $img = "<img src='assets/images/blog-image-2-940x460.jpg' alt=''>";
+    }
     echo "<div class='col-md-6' >
     <div class='trainer-item'>
         <div class='image-thumb'>".$img."</div>

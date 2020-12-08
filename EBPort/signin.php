@@ -39,12 +39,8 @@
        $conn = mysqli_connect($server,$user,'',$db);
         $sc=$fn=$cp=$p=$un=$e=$dob=$rl=null;
         if($_SERVER['REQUEST_METHOD']== "POST"){
-            //$fullname=htmlentities($_POST['fullname']);
             $username=htmlentities($_POST['username']);
-            // $email=htmlentities($_POST['email']);
             $password=htmlentities($_POST['password']);
-            // $cpassword=htmlentities($_POST['cpassword']);
-            // $dateofbirth = htmlentities($_POST['dob']);
             $role=htmlentities($_POST['role']);
            
             if(empty($username)){
@@ -65,37 +61,44 @@
 
             if (empty($rl) && empty($un) && empty($p) ){
                 if($role == "Employer"){
-                $ins ="SELECT * FROM Employer WHERE username='$username' AND password='$password'";
-                // $res=mysqli_query($conn,$ins);
-                // if($res){
-                    
-                //     session_start();
-                //     $_SESSION["login"] = 1;
-
-                    
-                // }
-
-                $res=mysqli_query($conn,$ins);
-                if(mysqli_num_rows($res) == 0){
-                                $p = " Username and Password not matched ";
-                            }
-                else{
-                    //session_start();
-                    $_SESSION["login"] = "1";
-                    $_SESSION["username"] = $username;
-                    $ins ="SELECT fullname FROM Employer WHERE username='$username'";
+                    $ins ="SELECT * FROM Employer WHERE username='$username' AND password='$password'";
                     $res=mysqli_query($conn,$ins);
-                    $nm = mysqli_fetch_assoc($res);
-                    $_SESSION['name'] = $nm['fullname'];
-                    // $sc = "welcome ".$nm['fullname'];
-                    // echo "<script>alert(".$nm.")</script>";
-                    // $row = mysqli_fetch_assoc($res)
-                    header("Location: index.php");
+                    if(mysqli_num_rows($res) == 0){
+                                    $p = " Username and Password not matched ";
+                                }
+                    else{
+                        //session_start();
+                        $_SESSION["login"] = "1";
+                        $_SESSION["username"] = $username;
+                        $ins ="SELECT fullname FROM Employer WHERE username='$username'";
+                        $res=mysqli_query($conn,$ins);
+                        $nm = mysqli_fetch_assoc($res);
+                        // $_SESSION['name'] = $nm['fullname'];
+                        $_SESSION['name'] = strtok($nm['fullname'], " ");
+                        header("Location: index.php");
+                    }
+                
                 }
-                // else{
-                //     echo("unsuccess: ".mysqli_error($conn));
-                // }
-            }
+                else{
+                    $ins ="SELECT * FROM JobSeeker WHERE username='$username' AND password='$password'";
+                    $res=mysqli_query($conn,$ins);
+                    if(mysqli_num_rows($res) == 0){
+                                    $p = " Username and Password not matched ";
+                                }
+                    else{
+                        //session_start();
+                        $_SESSION["login"] = "1";
+                        $_SESSION["username"] = $username;
+                        $ins ="SELECT fullname FROM JobSeeker WHERE username='$username'";
+                        $res=mysqli_query($conn,$ins);
+                        $nm = mysqli_fetch_assoc($res);
+                        
+                        // $_SESSION['name'] = $nm['fullname'];
+                        $_SESSION['name'] = strtok($nm['fullname'], " ");
+        
+                        header("Location: index.php");
+                    }
+                }
             }
             
              
@@ -117,38 +120,38 @@
     
     
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
+   <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Employment <em> Portal</em></a>
+                        <a href="index.php" class="logo">Employment <em> Portal</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="jobs.html">Jobs</a></li>
-                            <!-- <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Log in</a>
+                            <li><a href="index.php" class="active">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                              
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="signin.php">Sign in </a>
-                                    <a class="dropdown-item" href="signup.php">Sign up</a>
-                                    
+                                    <a class="dropdown-item" href="Jobs.php">Explore Jobs</a>
+                                    <a class="dropdown-item" href="add_jobs.php">Add Jobs</a>
                                 </div>
-                            </li> -->
+                            </li>
+                           
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                               
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="about.php">About Us</a>
                                     <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
+                                    <a class="dropdown-item" href="blog.php">Blog</a>
                                     <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                                     <a class="dropdown-item" href="terms.html">Terms</a>
                                 </div>
                             </li>
-                            <li><a href="contact.html">Contact</a></li> 
+                            <li><a href="contact.php">Contact</a></li> 
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class='fas fa-user-alt'></i></a>
                                 <div class="dropdown-menu">
@@ -175,7 +178,6 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-
     <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
         <div class="container">
             <div class="row">
@@ -211,8 +213,8 @@
                         </div>
                         <div id="form_mid" class="col-sm-10">
                             <select name="role" class="form-control">
-                                <option>Employer</option>
-                                <option>job Seeker</option>
+                                <option value = "Employer">Employer</option>
+                                <option value = "JobSeeker">JobSeeker</option>
                             </select>
                             <?php echo $rl ?>
                         </div>
@@ -266,13 +268,14 @@
     </section>
     <!-- ***** Call to Action End ***** -->
 
-    <!-- ***** Footer Start ***** -->
-    <footer>
+  <!-- ***** Footer Start ***** -->
+  <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <p>
-                        No copyrights. A demo project.
+                        Copyright © No-copyrights
+                        - Project by Marcus and Siddhu</a>
                     </p>
                 </div>
             </div>
